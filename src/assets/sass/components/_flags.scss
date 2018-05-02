@@ -1,0 +1,22 @@
+@import "../mixins/index";
+
+%base-flag {
+  display: inline;
+  font-weight: 700;
+  border-radius: 2px;
+  padding: 0.4em 0.6em;
+}
+
+.flag {
+  @extend %base-flag;
+  font-size: 14px;
+}
+
+.flag-tiny, .table-indicator {
+  @extend %base-flag;
+  font-size: 10px;
+  padding: 0.2em 0.6em;
+}
+.table-indicator {
+  margin-right: 5px;
+}

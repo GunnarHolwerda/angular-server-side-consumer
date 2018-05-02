@@ -1,0 +1,50 @@
+.bg-pattern {
+  background: {
+    image: url('/sites/all/themes/opensesame/images/bg-pattern.png');
+    size: cover;
+    attachment: fixed;
+    position: center center;
+  }
+}
+.bg-pattern-1 {
+  background: {
+    image: url('/sites/all/themes/opensesame/images/bg-pattern-2.svg');
+    attachment: fixed;
+    repeat: repeat;
+  }
+}
+.bg-pattern-2 {
+  background: {
+    image: url('/sites/all/themes/opensesame/images/bg-pattern-3.svg');
+    attachment: fixed;
+    repeat: repeat;
+  }
+}
+.bg-image-overlay-dark {
+  box-shadow: inset 10000px 10000px 0 10000px rgba($dark-tertiary, 0.85);
+}
+.bg-image-overlay-light {
+  box-shadow: inset 10000px 10000px 0 10000px rgba(255, 255, 255, 0.3);
+}
+.bg-image-overlay-none {
+  box-shadow: none;
+}
+.box.bg-image-overlay-primary {
+  box-shadow: inset 10000px 10000px 0 10000px rgba($color-primary, 0.9);
+}
+.bg-image-cover, .testimonial-bg-image-cover {
+  background: {
+    size: cover;
+    position: center center;
+    repeat: no-repeat;
+    attachment: scroll;
+  }
+}
+.bg-image {
+  background: {
+    image: url('/sites/all/themes/opensesame/images/bg-image-2.jpg');
+    repeat: no-repeat;
+    size: cover;
+    position: 50% 0%;
+  }
+}

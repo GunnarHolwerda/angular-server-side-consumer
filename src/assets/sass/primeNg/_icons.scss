@@ -1,0 +1,17 @@
+// .fa is included with .material-icons class
+
+.fa-check:before {
+  content: '\E5CA';
+}
+.fa-caret-down:before {
+  content: '\E5CF';
+}
+.fa-caret-up:before {
+  content: '\E5CE';
+}
+.fa-sort:before, .fa-sort-asc:before {
+  @include icon-arrowdown
+}
+.fa-sort-desc:before {
+  @include icon-arrowup
+}

@@ -1,0 +1,239 @@
+@font-face {
+  font-family: $font-icon;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/sites/all/themes/opensesame/fonts/material-design-icons/iconfont/MaterialIcons-Regular.eot'); /* For IE6-8 */
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url('/sites/all/themes/opensesame/fonts/material-design-icons/iconfont/MaterialIcons-Regular.woff2') format('woff2'), url('/sites/all/themes/opensesame/fonts/material-design-icons/iconfont/MaterialIcons-Regular.woff') format('woff'), url('/sites/all/themes/opensesame/fonts/material-design-icons/iconfont/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+.material-icons, .fa {
+  vertical-align: middle;
+  position: relative;
+  margin: 0 auto;
+  font-family: $font-icon;
+  font-weight: normal;
+  font-size: inherit;
+  font-style: normal; /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased; /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility; /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale; /* Support for IE. */
+  font-feature-settings: 'liga';
+
+  &.mobile-nav-icon {
+    font-size: 13px;
+    top: -1px;
+  }
+  &.secondary-nav-icon {
+    font-size: 15px;
+    top: -1px;
+  }
+  &.menu-nav-icon {
+    position: relative;
+    color: $light-secondary;
+    opacity: 1.0;
+    margin-right: 10px;
+    font-size: 11px;
+    top: -1px;
+  }
+  &.page-content-icons {
+    font-size: 23px;
+    vertical-align: middle;
+    display: block;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 2px rgba($dark-primary, 0.1);
+
+    &.margin-right {
+      top: -3px;
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+  }
+  &.table-icon {
+    font-size: 13px;
+    position: relative;
+    color: $text-light;
+    top: -1px;
+    margin-right: 5px;
+  }
+  &.filter-bar-icons {
+    margin: 0 auto;
+    font-size: 15px;
+  }
+  &.margin-right {
+    margin-right: 10px;
+  }
+  &.margin-left {
+    margin-left: 10px;
+  }
+  &.primary {
+    color: $color-primary;
+  }
+  &.success {
+    color: #1f8c00;
+  }
+  &.light {
+    color: $light-primary;
+  }
+  &.medium {
+    color: $text-light;
+  }
+  &.inline-block {
+    vertical-align: middle;
+  }
+  &.dark {
+    color: $dark-primary;
+  }
+}
+
+// The material icons are injected and can't be styled in the component
+.btn {
+  i, .material-icons {
+    margin-right: 10px;
+    top: -1px;
+  }
+}
+
+// don't use :not, just override the values here
+.btn.icon-only {
+  i, .material-icons {
+    margin-right: 0;
+    top: 0;
+  }
+}
+
+.btn.btn-mobile-icon {
+  i {
+    font-size: 1.5em;
+    line-height: 0.65;
+    @media (max-width: $mobile-l) {
+      margin-right: 0;
+    }
+  }
+}
+
+.btn-status {
+  i, .material-icons {
+    font-size: 11px;
+    margin-right: 8px;
+    top: -1px;
+  }
+  &.status-success, &.status-warning, &.status-error {
+    i, .material-icons {
+      color: $light-primary;
+    }
+  }
+  &.status-success:hover, &.status-warning:hover, &.status-error:hover, &.status-alert:hover {
+    i, .material-icons {
+      color: $text-medium;
+    }
+  }
+}
+
+// landing icon
+// TODO: in a component?
+.landing-icon {
+  border-radius: 50%;
+  @include transition;
+  height: 36px;
+  width: 36px;
+  background-color: rgba($color-primary, 0.9);
+  box-shadow: 0 1px 1px rgba($dark-primary, 0.2);
+  text-align: center;
+  padding: 8px 2px 0;
+  margin: 0 0 20px;
+  i {
+    color: $light-primary;
+    font-size: 20px !important;
+  }
+  &.centered {
+    margin: 0 auto 20px;
+  }
+  &.large-icon {
+    height: 44px;
+    width: 44px;
+    padding-top: 3px;
+    margin: 0 auto 30px;
+    i {
+      font-size: 20px !important;
+    }
+  }
+  &.small-icon {
+    height: 24px;
+    width: 24px;
+    padding-top: 3px;
+    & i {
+      font-size: 16px !important;
+    }
+  }
+  &.inline {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    margin-right: 10px;
+    &.top {
+      vertical-align: top;
+    }
+  }
+  &.light {
+    background-color: rgba($light-primary, 1.0);
+    i {
+      color: $color-primary;
+    }
+  }
+  &.inline-light {
+    background-color: rgba($light-primary, 1.0);
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    margin-right: 10px;
+    & i {
+      color: $color-primary;
+    }
+  }
+}
+
+/**
+* Replace inline icon placement
+*/
+.icon-arrowdown:before {
+  @include icon-arrowdown;
+}
+.icon-arrowup:before {
+  @include icon-arrowup;
+}
+.icon-check:before {
+  @include icon-check;
+}
+.icon-arrowleft:before {
+  @include icon-arrowleft;
+}
+.icon-send:before {
+  @include icon-envelope;
+}
+.icon-settings:before {
+  @include icon-settings;
+}
+.icon-add:before {
+  @include icon-add;
+}
+.icon-support:before {
+  @include icon-support;
+}
+.icon-login:before {
+  @include icon-login;
+}
+.icon-thumbs-up:after {
+  @include icon-thumbs-up;
+  font-style: normal;
+}
+.icon-thumbs-down:after {
+  @include icon-thumbs-down;
+  font-style: normal;
+}
+.icon-thumbs:after {
+  @include icon-thumbs;
+  font-style: normal;
+}
+.icon-group:after {
+  @include icon-group;
+}

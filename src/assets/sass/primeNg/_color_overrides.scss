@@ -1,0 +1,57 @@
+$fontFamily: $font-body;
+$fontSize: 1em;
+$borderRadius: 2px;
+$disabledOpacity: 0.5;
+
+//Header
+$headerBorderWidth: 1px;
+$headerBorderColor: $light-secondary;
+$headerBgColor: inherit;
+$headerTextColor: $text-medium;
+$headerFontWeight: bold;
+$headerIconTextColor: $text-light;
+
+//Content
+$contentBorderWidth: 1px;
+$contentBorderColor: $light-secondary;
+$contentBgColor: $light-primary;
+$contentTextColor: $text-medium;
+
+//Default State
+$stateDefaultBorderWidth: 1px;
+$stateDefaultBorderColor: $text-light;
+$stateDefaultBgColor: inherit;
+$stateDefaultTextColor: $text-medium;
+
+//Active State
+$stateActiveBorderColor: darken($color-primary, 10%);
+$stateActiveBgColor: $color-primary;
+$stateActiveTextColor: $light-primary;
+
+//Highlight State
+$stateHighlightBorderColor: $light-secondary;
+$stateHighlightBgColor: $light-tertiary;
+$stateHighlightTextColor: $text-dark;
+
+//Focus State
+$stateFocusBorderColor: $color-primary;
+$stateFocusBgColor: $light-primary;
+$stateFocusTextColor: $color-primary;
+
+//Error State
+$stateErrorBorderColor: $color-error;
+$stateErrorBgColor: inherit;
+$stateErrorTextColor: $color-error;
+
+//Hover State
+$stateHoverBorderColor: $color-primary;
+$stateHoverBgColor: $light-secondary;
+$stateHoverTextColor: $text-dark;
+
+//Forms
+$inputBgColor: $light-primary;
+$inputTextColor: $text-medium;
+$invalidInputBorderColor: $color-error;
+$inputGroupTextColor: $text-dark;
+
+@import "../../../../node_modules/primeng/resources/themes/theme";

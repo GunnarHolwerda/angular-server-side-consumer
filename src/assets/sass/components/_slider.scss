@@ -1,0 +1,270 @@
+/**
+* Shared slider styles
+*/
+.slick-slider {
+  list-style-type: none;
+  overflow: hidden;
+  position: relative;
+  li, li.slick-slide {
+    @include transition;
+    display: inline-block;
+    padding: 0 20px;
+    vertical-align: middle;
+    text-align: center;
+  }
+  img.brand-logo {
+    max-height: 40px;
+    max-width: 120px;
+    width: auto;
+    display: block;
+  }
+}
+
+.slick-slider-unstyled .slick-next, .slick-slider-unstyled .slick-prev {
+  display: none !important;
+}
+
+.slick-slider-blog {
+  margin: 0 auto;
+  li, li.slick-slide {
+    padding: 0 !important;
+    text-align: center;
+  }
+  .slick-active {
+    opacity: 0.1;
+  }
+  .slick-center {
+    opacity: 1.0;
+  }
+  .slick-next, .slick-prev {
+    z-index: 99999 !important;
+    top: calc(50% - 60px) !important;
+    background-color: transparent !important;
+    width: 60px !important;
+    background-size: 20px auto !important;
+  }
+}
+
+.landing-highlight ul.slick-slider li {
+  width: auto !important;
+  max-width: 800px;
+  text-align: left !important;
+}
+
+.slick-slider-landing, .slick-slider-landing-highlight {
+  margin: 0 auto;
+  height: 100%;
+  li, li.slick-slide {
+    padding: 0 !important;
+    text-align: center;
+  }
+  .slick-active {
+    opacity: 0.1;
+  }
+  .slick-center {
+    opacity: 1.0;
+  }
+  .slick-next, .slick-prev {
+    z-index: 99999;
+    bottom: 5px;
+    top: initial;
+    background-color: transparent;
+    width: 80px;
+    &:after {
+      color: $light-primary;
+    }
+  }
+  ul.slick-dots {
+    position: absolute;
+    margin: 0 auto;
+    padding: 20px 0 15px;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba($dark-primary, 0.4);
+    z-index: 99;
+    @include transition;
+    &:hover {
+      background-color: rgba($dark-primary, 0.7);
+    }
+    li, li.slick-slide {
+      @include transition;
+      width: 25px !important;
+      height: 25px !important;
+      text-align: center;
+      opacity: 0.3;
+      &:hover {
+        opacity: 0.7;
+      }
+      &.slick-active {
+        opacity: 1.0;
+        button {
+          background-color: $color-primary;
+        }
+      }
+      button {
+        cursor: pointer;
+        outline: none;
+        font-size: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 3px solid $light-secondary;
+        background-color: $light-primary;
+      }
+    }
+  }
+}
+
+.slick-next, .slick-prev {
+  @include transition;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 50px;
+  width: 20px;
+  z-index: 99;
+  outline: none;
+  border: none;
+  background-color: $light-primary;
+  cursor: pointer;
+  font-size: 0;
+  &:after {
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    text-align: center;
+    color: $light-primary;
+    padding: 6px 5px 2px;
+    @include icon-arrowleft;
+    font-size: 40px;
+  }
+  &:hover {
+    transform: translateY(1px);
+  }
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.slick-next {
+  right: 0;
+  left: initial;
+  &:after {
+    @include icon-arrowright();
+  }
+}
+
+.slick-active {
+  opacity: 0.7;
+  &:hover {
+    opacity: 1.0;
+  }
+}
+
+.slick-current {
+  opacity: 1.0;
+}
+
+.slick-slider .slick-list {
+  opacity: 0;
+}
+
+.slick-slider.slick-initialized {
+  background: none;
+}
+
+.slick-slider.slick-initialized .slick-list {
+  opacity: 1;
+  position: relative;
+  transition: opacity 1s ease-in;
+}
+
+.content-carousel {
+  button {
+    font-size: 0;
+  }
+  .slick-prev {
+    display: none !important;
+  }
+  .slick-next {
+    z-index: 9999;
+    top: calc(50% - 40px);
+    background-color: rgba($dark-tertiary, 0.3);
+    width: 60px;
+    background-size: 20px auto;
+    &:hover {
+      background-color: rgba($dark-tertiary, 0.7);
+    }
+  }
+}
+
+.slider-wrapper-careers {
+  .slider-wrapper {
+    overflow: visible;
+    max-width: 100%;
+    display: block;
+    height: 315px !important;
+    z-index: 9999;
+  }
+  .slick-track {
+    height: 315px !important;
+    position: relative;
+    display: block;
+  }
+  .slick-list {
+    overflow: hidden;
+  }
+  ul.slick-dots {
+    padding-bottom: 10px;
+    li {
+      vertical-align: top;
+      font-size: 12px;
+    }
+  }
+  // use some absolute positioning to get the layered effect with photo strip
+  ul.slick-slider {
+    max-width: 100%;
+    width: 100%;
+    list-style-type: none;
+    display: block;
+    min-height: 200px;
+    z-index: 999;
+    position: absolute;
+    right: 0;
+    left: 0;
+    overflow: visible;
+    height: 315px;
+    background-color: transparent;
+    @include transition;
+    box-shadow: 0 2px 4px 0 rgba($dark-primary, 0.3);
+
+    &:hover {
+      box-shadow: 0 5px 10px 0 rgba($dark-primary, 0.5);
+    }
+    li {
+      @include transition;
+      display: inline-block;
+      padding: 0;
+      width: 480px;
+      background-color: transparent;
+      max-width: 95%;
+      height: 315px !important;
+      vertical-align: middle;
+      text-align: center;
+
+      img {
+        @include transition;
+        width: 480px !important;
+        height: 315px !important;
+        max-width: none;
+        max-height: none;
+        margin: 0 auto;
+      }
+    }
+  }
+}

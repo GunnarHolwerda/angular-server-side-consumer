@@ -1,0 +1,12 @@
+/**
+ * Brand Colors
+ */
+.catmarketplace {
+  $color-primary: #3b7289; // rgba(59,114,137,1)
+  $color-secondary: #457c93; // rgba(69,124,147,1)
+  $color-tertiary: #3b9089; // rgba(59,114,137,1);
+  $active-nav-color: $light-primary;
+
+  @import "../colors/index";
+}
+

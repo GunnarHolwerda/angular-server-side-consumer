@@ -1,0 +1,15 @@
+.infor {
+  /**
+   * Brand Colors
+   */
+  $color-primary: #13A3F7;
+
+  /**
+   * Text Colors
+   */
+  $text-dark: #737373;
+  $text-default: #737373;
+  $active-nav-color: $color-primary;
+
+  @import "../colors/index";
+}

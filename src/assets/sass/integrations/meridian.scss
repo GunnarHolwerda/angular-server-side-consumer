@@ -1,0 +1,13 @@
+.meridian {
+/**
+ * Brand Colors
+ */
+  $color-primary: #49C5B1;
+  $color-secondary: lighten($color-primary, 10%);
+  $color-tertiary: darken($color-primary, 10%);
+
+  $active-nav-color: $color-primary;
+
+  @import "../colors/index";
+}
+

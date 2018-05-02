@@ -1,0 +1,14 @@
+/**
+ * Brand Colors
+ */
+.opensesamedemo {
+  // Defined colors
+  $demo-blue: #2E75B5;
+
+  // Theme color overrides
+  $color-primary: $demo-blue;
+  $active-nav-color: $color-primary;
+
+  @import "../colors/index";
+}
+

@@ -1,0 +1,227 @@
+/**
+* Ideally in a component
+* The links of the navigation aren't consistently in components
+* and child components depend on parents for styling
+* header will need to be refactored and these styles moved
+* the dropdown styles are in the dropdown components,
+* this is for the links in the header
+*/
+.primary-nav {
+  &.small {
+    .header-dropdown {
+      top: 36px;
+    }
+    a {
+      font-size: 12px;
+      padding: 16px 16px 10px;
+      border-bottom: none;
+      color: $text-medium;
+    }
+    li:hover a {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+  li {
+    @include transition;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    &.language {
+      a {
+        i {
+          font-size: 14px;
+          line-height: 10px;
+          margin-right: 6px;
+          top: -1px;
+        }
+      }
+    }
+    a {
+      display: block;
+      outline: 0;
+      width: 100%;
+      font-size: 13px;
+      padding: 19px 20px 17px 22px;
+      color: $text-dark;
+      font-weight: 600;
+      z-index: 1;
+      border-bottom: 2px solid transparent;
+      @include transition;
+      i.dropdown-icon {
+        @include transition;
+        font-size: 18px;
+        line-height: 10px;
+        margin-left: 5px;
+        top: -1px;
+        padding: 0;
+        color: $text-medium;
+        opacity: 0.5;
+      }
+      &.signup {
+        margin-top: 4px;
+        padding: 8px 14px;
+        border: 1px solid rgba($dark-primary, 0.2);
+        box-shadow: 0 1px 1px rgba($dark-primary, 0.05);
+        border-radius: 2px;
+        background-color: $light-primary;
+        &:hover {
+          background-color: $light-primary;
+          color: $text-dark;
+          box-shadow: 0 1px 2px rgba($dark-primary, 0.3);
+          border-color: $color-primary;
+        }
+      }
+    }
+    &.auth-area {
+      margin-left: 10px;
+      cursor: pointer;
+      .header-dropdown {
+        top: 30px;
+      }
+      img {
+        margin-top: 6px;
+        display: inline-block;
+        vertical-align: middle;
+        max-height: 30px;
+        width: auto;
+        max-width: 30px;
+        box-shadow: inset 0 0 0 5px $light-primary;
+        border: 1px solid rgba($dark-primary, 0.2);
+        border-right: 0;
+        border-radius: 1px 0 0 1px;
+      }
+      > a {
+        display: inline-block;
+        vertical-align: middle;
+        width: auto;
+        border-radius: 0 1px 1px 0;
+      }
+    }
+    span.cart {
+      margin: 0 4px;
+      text-align: center;
+      cursor: pointer;
+      padding: 7px;
+      @include transition;
+      vertical-align: middle;
+      position: relative;
+      width: auto;
+      font-size: 12px;
+      display: inline-block;
+      i {
+        top: 2px;
+        font-size: 18px;
+      }
+    }
+    &:hover a {
+      color: $text-dark;
+      background-color: rgba($light-primary, 1.0);
+      border-bottom-color: rgba($color-primary, 1.0);
+      &:after {
+        opacity: 1.0;
+        bottom: calc(50% - 12px);
+      }
+      i.dropdown-icon {
+        opacity: 1.0;
+        color: $color-primary;
+        transform: rotate(180deg);
+      }
+    }
+    &:hover > a {
+      box-shadow: inset 0 -3px 15px 0 rgba($color-primary, 0.05), 0 1px 1px 0 rgba($dark-primary, 0.1);
+    }
+    &.active a {
+      background-color: rgba($light-primary, 1.0);
+      border-bottom-color: rgba($color-primary, 1.0);
+      &:after {
+        opacity: 1.0;
+        bottom: calc(50% - 12px);
+      }
+      i.dropdown-icon {
+        opacity: 1.0;
+        color: $color-primary;
+      }
+    }
+    &.active > a {
+      color: $color-primary;
+      box-shadow: inset 0 -3px 15px 0 rgba($color-primary, 0.08), 0 1px 2px 0 rgba($dark-primary, 0.1);
+    }
+  }
+}
+
+// cart count
+span.cart-count {
+  display: inline-block;
+  font-weight: 600;
+  color: $light-primary;
+  padding: 5px 7px 4px;
+  border-radius: 2px;
+  background-color: $color-primary;
+  position: relative;
+  top: 3px;
+  margin-left: 5px;
+}
+
+@media (max-width: $mobile-xl) {
+  ul.primary-nav {
+    display: none;
+    &.display-mobile {
+      display: block;
+      right: 40px;
+      li {
+        a {
+          padding: 12px 10px 8px !important;
+        }
+      }
+    }
+    &.show-mobile {
+      float: right;
+      position: relative;
+    }
+  }
+}
+
+.menu-toggle {
+  vertical-align: top;
+  float: right;
+  cursor: pointer;
+  margin-top: 8px;
+  outline: 0;
+  padding: 9px 16px 6px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 1;
+  @include transition;
+  color: $color-primary;
+  border: 1px solid rgba($color-primary, 0.5);
+  border-radius: 2px;
+  &:hover {
+    background-color: rgba($color-primary, 0.05);
+    border-color: $color-primary;
+    box-shadow: 0 1px 2px rgba($dark-primary, 0.2);
+  }
+  i {
+    font-size: 14px;
+    margin: 0 auto;
+    top: -1px;
+    margin-right: 10px;
+  }
+}
+
+.cart-mobile {
+  display: none;
+}
+
+@media (max-width: $mobile-nav-break) {
+  .cart-mobile {
+    display: inline;
+  }
+  span.cart {
+    display: none;
+  }
+}

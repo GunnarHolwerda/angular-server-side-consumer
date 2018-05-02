@@ -1,0 +1,83 @@
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 0 1px 1px rgba($dark-primary, 0.2);
+  margin: 0 auto 15px;
+  font-weight: normal;
+  @include transition;
+  &.text-color-primary {
+    text-shadow: 0 1px 1px rgba($dark-primary, 0.05);
+  }
+}
+h1, .h1 {
+  color: $light-primary;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: .3px;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba($dark-primary, 0.2);
+  margin: 0 auto 20px;
+  @media (min-width: $mobile-l) {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+h2, .h2 {
+  color: $light-secondary;
+  font-size: 26px;
+  line-height: 34px;
+  letter-spacing: .2px;
+  text-shadow: 0 1px 1px rgba($dark-primary, 0.2);
+}
+h3, .h3 {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+  margin: 0 auto 5px;
+  @media (min-width: $mobile-l) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+h4, .h4 {
+  color: $light-secondary;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: .2px;
+  text-shadow: 0 1px 1px rgba($dark-primary, 0.1);
+}
+h5, .h5 {
+  color: $light-secondary;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  margin: 0 auto 10px;
+}
+h6, .h6 {
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0 auto 10px;
+}
+
+/**
+ * Links
+ */
+a {
+  @include transition;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/**
+ * Paragraph
+ */
+p {
+  line-height: 1.5;
+}

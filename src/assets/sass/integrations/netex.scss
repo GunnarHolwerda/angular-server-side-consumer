@@ -1,0 +1,9 @@
+.netex {
+  /**
+   * Brand Colors
+   */
+  $color-primary: #2B76B3;
+  $active-nav-color: $color-primary;
+
+  @import '../colors/index';
+}

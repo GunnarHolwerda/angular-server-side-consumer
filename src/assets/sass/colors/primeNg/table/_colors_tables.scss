@@ -1,0 +1,120 @@
+/**
+* Base table styles
+*/
+// table basics
+.ui-table table {
+  color: $text-dark;
+  box-shadow: 0 3px 5px rgba($text-medium, 0.25);
+}
+
+/**
+* Table Header
+*/
+.ui-table-thead {
+  border-bottom: 1px solid rgba($dark-primary, 0.05);
+}
+
+.ui-table .ui-table-thead > tr > th {
+  color: $text-medium;
+  text-shadow: 0 1px 3px rgba($dark-primary, 0.1);
+}
+
+.ui-table .ui-table-tbody tr.even {
+  background-color: rgba($light-tertiary, 0.5);
+}
+
+.ui-table-thead th.ui-sortable-column {
+  border-bottom-color: rgba($dark-primary, 0.1);
+}
+
+.ui-table-thead th.ui-sortable-column:hover,
+.ui-table-thead th.ui-sortable-column.ui-state-highlight {
+  color: $color-primary;
+  border-bottom: 1px solid rgba($color-primary, .5);
+}
+
+.ui-table-thead th.ui-state-highlight {
+  color: $color-primary;
+  border-bottom: 1px solid rgba($color-primary, .5);
+  &:hover {
+    border-bottom: 1px solid rgba($color-primary, .5);
+  }
+}
+
+/**
+* Table Body rows and columns
+*/
+.ui-table .ui-table-tbody > tr {
+  border-bottom: 1px solid rgba($light-secondary, 0.6);
+
+  // Group titles
+  &.table-divider {
+    th:first-child {
+      border-left: 3px solid rgba($light-primary, 1.0);
+    }
+    th,
+    > td {
+      background-color: rgba($light-primary, 1.0);
+      border-top: 1px solid $text-medium;
+    }
+    &.divider-edit-on {
+      th {
+        border-left: 3px solid $color-primary;
+      }
+      span {
+        background-color: $light-primary;
+        border: 1px solid $color-primary;
+        box-shadow: 0 1px 2px 0 rgba($dark-primary, 0.3);
+        color: $color-primary;
+      }
+    }
+  }
+  &.group {
+    background-color: $color-primary;
+  }
+
+  &:hover {
+    border-left: 3px solid rgba($color-primary, 0.6);
+    td {
+      .btn {
+        box-shadow: 0 1px 2px 0 rgba(44, 44, 44, 0.2);
+      }
+    }
+  }
+
+  &.active {
+    background-color: $light-primary;
+    td {
+      color: $text-dark;
+    }
+  }
+
+  &.ui-state-highlight {
+    border-left: 3px solid $color-primary;
+  }
+}
+
+.ui-table .ui-table-tbody > tr > td {
+  border-right: 1px solid rgba($light-secondary, 0.6);
+  a:hover {
+    color: $color-primary;
+    i {
+      color: $color-primary;
+    }
+  }
+}
+
+.ui-table .ui-table-tbody > .active {
+  border-left: 3px solid rgba($color-primary, 0.6);
+}
+
+.divider-edit-on {
+  .table-header-cell:first-child {
+    border-left: 3px solid $color-primary;
+  }
+}
+
+.table-modal .ui-table .ui-table-tbody > tr {
+  border-left: 3px solid $light-secondary;
+  border-right: 1px solid $light-secondary;
+}

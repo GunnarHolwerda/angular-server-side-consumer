@@ -1,0 +1,84 @@
+.box {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding: 100px 0;
+  @include transition;
+  box-shadow: inset 0 1px 1px 0 rgba($dark-secondary, 0.1);
+  &.fixed {
+    position: fixed;
+    z-index: 99;
+  }
+  // use the following to account for the header height
+  // match to header height and use on first box area of page
+  // TODO: handle this better - right now header height + desired height
+  // use flexbox here instead ?
+  &.accommodate-header {
+    padding-top: 0;
+    padding-bottom: 120px;
+    box-shadow: none;
+    @media (min-width: $desktop-xl) {
+      padding-bottom: 150px;
+    }
+  }
+}
+
+.centerbox {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  width: 1300px;
+  max-width: 95%;
+  &.pull-up-medium {
+    margin-top: -120px;
+  }
+  &.pull-up-large {
+    margin-top: -220px;
+  }
+  &.narrow {
+    width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.narrow-medium {
+    width: 1240px;
+  }
+  &.narrow-small {
+    width: 1024px;
+  }
+  @media (min-width: $desktop-xl) {
+    width: 1720px;
+  }
+  @media (min-width: $desktop-xxl) {
+    width: 1940px;
+  }
+  &.full {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: $mobile-xl) {
+  .centerbox, .centerbox.wide {
+    width: 95%;
+    max-width: 95%;
+  }
+  .centerbox.absolute {
+    top: 76px;
+  }
+  .centerbox.full, .centerbox.wide.full-mobile {
+    max-width: 100%;
+    width: 100%;
+  }
+  .mobile-padding {
+    width: 95%;
+    max-width: 95%;
+    margin:0 auto;
+    padding-top: 40px;
+    text-align:center;
+  }
+  .mobile-margin {
+    margin: 30px auto 0 !important;
+  }
+}

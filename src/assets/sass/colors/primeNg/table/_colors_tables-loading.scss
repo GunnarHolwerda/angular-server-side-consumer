@@ -1,0 +1,36 @@
+// separate file for our loading animations
+
+// fade out td in table to allow for data to load in behind, invoke opposite animation to reveal new
+tbody tr {
+  border-left-color: $light-primary;
+  &.even {
+    border-left-color: $light-primary;
+  }
+}
+
+tbody tr td.table-loading-state {
+  border-right-color: rgba(249, 249, 249, 1.0);
+  &:before {
+    background-color: rgba($light-primary, 1.0);
+  }
+}
+
+// add a "progress across" animation for table rows - may not use
+tbody tr.table-loading-state {
+  border-bottom-color: rgba($light-secondary, 0.2);
+  &:after {
+    background-color: $color-primary;
+  }
+}
+
+// add a spinner item to our "select all" checkbox
+// we just have the one since its overwhelming to have spinners per-row
+th.checkbox-cell.table-loading-state {
+  &:before {
+    background-color: rgba($light-primary, 1.0);
+  }
+  &:after {
+    border: 2px solid $text-light;
+    border-top-color: $color-primary;
+  }
+}

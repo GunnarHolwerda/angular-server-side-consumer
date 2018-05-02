@@ -1,0 +1,28 @@
+@include keyframes('fadeInUp');
+@include keyframes('load7');
+/**
+ * Progress Animations
+ */
+@include keyframes('processingprogress');
+@include keyframes('processingprogressvalue');
+
+/**
+ * Search Results Animations
+ */
+// css delay for spinner to wait until card behind is white
+@include keyframes('searchresultdelay');
+@include keyframes('searchresultspinner');
+
+// search result pulse to fade to white
+@include keyframes('searchresultpulse');
+
+// search result table to "progress" across a tr - may not use
+@include keyframes('searchresulttable');
+@include keyframes('searchresulttabletwo');
+@include keyframes('searchresulttablethree');
+@include keyframes('searchresulttablefour');
+@include keyframes('searchresulttablefive');
+@include keyframes('searchresulttablesix');
+@include keyframes('alertpulseloading');
+@include keyframes('alertpulse');
+@include keyframes('messageInserted');

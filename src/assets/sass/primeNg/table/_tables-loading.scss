@@ -1,0 +1,197 @@
+tbody tr td.table-loading-state {
+  border-left: none;
+  position: relative;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  transition: .5s;
+
+  &:before {
+    animation: searchresultpulse .5s ease;
+    @include transition;
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    z-index: 999;
+    pointer-events: none;
+  }
+
+}
+
+// add a "progress across" animation for table rows - may not use
+tbody tr.table-loading-state {
+  position: relative;
+  @include transition;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    left: 20px;
+    right: 0;
+    margin-top: 18px;
+    z-index: 9999999;
+    height: 6px;
+    border-radius: 0px;
+    // add the spinner in after a bit of a delay so it only shows on fully white bg
+    animation: searchresulttable 7s linear infinite;
+    pointer-events: none;
+  }
+  // alternate between a few widths for variety
+  // alternate the color a slight bit as well
+  &:nth-child(2n):after {
+    animation: searchresulttabletwo 8s linear infinite;
+  }
+
+  &:nth-child(3n):after {
+    animation: searchresulttablethree 6s linear infinite;
+  }
+
+  &:nth-child(4n):after {
+    animation: searchresulttablefour 8s linear infinite;
+  }
+
+  &:nth-child(5n):after {
+    animation: searchresulttablefive 6s linear infinite;
+  }
+
+}
+
+// add a spinner item to our "select all" checkbox
+// we just have the one since its overwhelming to have spinners per-row
+th.checkbox-cell.table-loading-state {
+  position: relative;
+  @include transition;
+
+  &:before {
+    animation: searchresultpulse .5s ease-in-out;
+    @include transition;
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    z-index: 99999;
+    pointer-events: none;
+  }
+  &:after {
+    @include transition;
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    z-index: 99999;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    background-color: transparent;
+    animation: searchresultspinner 1s linear infinite, searchresultdelay 3s ease-in-out;
+    pointer-events: none;
+  }
+
+}
+
+// search result table to "progress" across a tr - may not use
+@keyframes searchresulttable {
+  0% {
+    background-color: rgba($text-light, 0.1);
+    width: 0%;
+  }
+
+  50% {
+    background-color: rgba($text-light, 0.3);
+    width: 50%;
+  }
+
+  100% {
+    background-color: rgba($text-light, 0.1);
+    width: 0%;
+  }
+
+}
+
+// alt 2
+@keyframes searchresulttabletwo {
+  0% {
+    background-color: rgba($text-light, 0.1);
+    width: 0%;
+  }
+
+  50% {
+    background-color: rgba($text-light, 0.15);
+    width: 70%;
+  }
+
+  100% {
+    background-color: rgba($text-light, 0.1);
+    width: 0%;
+  }
+
+}
+
+// third alt
+@keyframes searchresulttablethree {
+  0% {
+    background-color: rgba($text-light, 0.1);
+    width: 0%;
+  }
+
+  50% {
+    background-color: rgba($text-light, 0.1);
+    width: 25%;
+  }
+
+  100% {
+    background-color: rgba($text-light, 0.1);
+    width: 0%;
+  }
+
+}
+
+// fourth alt
+@keyframes searchresulttablefour {
+  0% {
+    background-color: rgba($text-light, 0.1);
+    width: 0%;
+  }
+
+  50% {
+    background-color: rgba($dark-primary, 0.1);
+    width: 38%;
+  }
+
+  100% {
+    background-color: rgba($text-light, 0.1);
+    width: 0%;
+  }
+
+}
+
+// fifth alt
+@keyframes searchresulttablefive {
+  0% {
+    background-color: rgba($text-light, 0.1);
+    width: 0%;
+  }
+
+  50% {
+    background-color: rgba($text-light, 0.15);
+    width: 85%;
+  }
+
+  100% {
+    background-color: rgba($text-light, 0.1);
+    width: 0%;
+  }
+
+}

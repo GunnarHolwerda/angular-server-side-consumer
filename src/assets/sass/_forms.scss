@@ -1,0 +1,662 @@
+input {
+  line-height: initial;
+}
+input:focus, select:focus, textarea:focus, button:focus {
+  outline: none;
+}
+
+.form-wrapper {
+  position: relative;
+}
+
+/**
+* Label Styles
+*/
+label, .form-label {
+  color: $text-medium;
+  @include transition;
+  display: block;
+  font-weight: 600;
+  font-size: $font-small;
+  padding: 25px 10px 10px 0;
+  .text-right & {
+    padding: 25px 0 10px 10px;
+  }
+  &.label-large {
+    font-size: $font-medium;
+    color: $text-dark;
+  }
+  .required-form-label {
+    font-size: $font-small;
+    margin-left: 10px;
+    font-style: italic;
+  }
+}
+
+/**
+* General input & textarea styles
+*/
+input:not(.btn), textarea {
+  @include transition;
+  outline: 0 !important;
+  font-size: 16px;
+  line-height: initial;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 2px;
+  padding: 10px 18px;
+  box-shadow: 0 1px 1px rgba($dark-primary, 0.1);
+  margin: 0 auto;
+  font-weight: 600;
+  font-family: $font-body;
+  &::placeholder {
+    color: $text-medium;
+    opacity: 1.0;
+    font-weight: normal;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  &.error, &.ng-invalid.ng-touched {
+    border-color: $color-error;
+  }
+  &:active,
+  &:focus {
+    background-color: rgba($light-primary, 0.8);
+    padding-left: 25px;
+    font-weight: bold;
+    box-shadow: 0 1px 2px rgba($dark-primary, 0.2);
+    &::placeholder {
+      color: $text-dark;
+      opacity: 1.0;
+    }
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+// for multi-tag fields
+.input-field-container {
+  box-shadow: 0 1px 1px rgba($dark-primary, 0.1);
+  padding: 5px 18px;
+  margin: 8px 0 auto;
+  a {
+    vertical-align: text-bottom;
+    margin-bottom: 5px;
+  }
+  .close-button {
+    display: inline-block;
+  }
+  input {
+    display: inline;
+    padding: 0 0 5px 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    margin: 5px 0 0;
+    vertical-align: middle;
+    width: auto;
+    &:focus {
+      box-shadow: none;
+      padding-left: 10px;
+      background: transparent;
+    }
+  }
+}
+
+/**
+* Fixed value (what is this for?)
+* Used in conjunction with disabled attribute
+*/
+.fixed-value input:disabled  {
+  opacity: 1.0;
+  cursor: default;
+  color: $color-primary;
+  border-color: transparent;
+  background-color: transparent;
+  padding-left: 0;
+  font-weight: bold;
+  box-shadow: none;
+  &::placeholder {
+    color: $color-primary;
+    font-weight: 600;
+    opacity: 1.0;
+  }
+  &:active,
+  &:focus {
+    color: $color-primary;
+    border-color: transparent;
+    background-color: transparent;
+    padding-left:0;
+    font-weight: bold;
+    box-shadow: none;
+
+    &::placeholder {
+      color: $color-primary;
+      font-weight:600;
+      opacity: 1.0;
+    }
+  }
+}
+
+/**
+* Numeric controls
+*/
+.form-numeric {
+  text-align: left;
+  & input:not(.btn), & textarea {
+    width: 90px;
+    max-width: 90px;
+    padding-right: 8px;
+    @include inline-vertical-middle;
+  }
+  @media (min-width: $mobile-xl) {
+    text-align: right;
+  }
+}
+.numeric-value-decrement, .numeric-value-increment {
+  display :inline-block;
+  vertical-align: middle;
+  width: auto;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+  padding: 2px;
+  border: 1px solid rgba($text-light,0.1);
+  background-color: rgba($light-secondary,0.2);
+  box-shadow: 0 1px 1px 0 rgba($dark-primary,0.1);
+  user-select: none;
+  @include transition;
+  &:after {
+    top:2px;
+    @include transition;
+    @include icon-arrowright();
+    font-size: 22px;
+    color: $text-light;
+    left:1px;
+    position: relative;
+  }
+  &:hover {
+    background-color:rgba($light-secondary,0.2);
+    box-shadow:0 1px 2px 0 rgba($dark-primary,0.2);
+    transform: translateY(-1px);
+    &:after {
+      color:$color-primary;
+    }
+  }
+  &:focus, &:active {
+    transform: translateY(1px);
+  }
+}
+.numeric-value-decrement {
+  margin-right: 6px;
+  &:after {
+    @include icon-arrowleft;
+    right: 1px;
+    left: initial;
+  }
+}
+.numeric-value-increment {
+  margin-left: 6px;
+}
+
+/**
+* Drop down selects
+*/
+.form-dropdown {
+  // space for dropdown arrow
+  select {
+    padding-right: 60px;
+  }
+  label:after {
+    position: absolute;
+    z-index: 9999;
+    right: 10px;
+    left: initial;
+    top: 58px;
+    @include icon-arrowdown;
+    font-size: 24px;
+    color: $color-primary;
+    font-weight: normal;
+    @include transition;
+    pointer-events: none;
+  }
+}
+select.form-select {
+  @include transition;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: 0;
+  font-size: $font-medium;
+  font-weight: 600;
+  font-family: $font-body;
+  line-height: initial;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 2px;
+  border: 1px solid rgba($dark-primary, 0.1);
+  padding: 10px 18px;
+  box-shadow: 0 1px 1px rgba($dark-primary, 0.1);
+  background-color: rgba($light-secondary, 0.3);
+  color: $color-primary;
+  margin: 0 auto;
+  cursor: pointer;
+  &::placeholder {
+    color: $text-medium;
+    opacity: 1.0;
+    font-weight: normal;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  &.error, &.ng-invalid.ng-touched {
+    border-color: $color-error;
+  }
+  &:active,
+  &:focus {
+    color: $color-primary;
+    border-color: $color-primary;
+    background-color: rgba($light-primary, 0.8);
+    padding-left: 25px;
+    font-weight: bold;
+    box-shadow: 0 1px 2px rgba($dark-primary, 0.2);
+    &::placeholder {
+      color: $text-dark;
+      opacity: 1.0;
+    }
+  }
+}
+
+input.full-width {
+  width: 100%;
+  min-width: 100%;
+  padding-right: 16px;
+}
+
+/**
+* Form Messages
+*/
+.form-message {
+  margin: 0 0 10px;
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-size: 12px;
+  display: inline-block;
+  width: auto;
+  color: #FFF;
+  background-color: $text-light;
+  text-transform: none;
+  &.error {
+    background-color: $color-error;
+    color: #FFF;
+  }
+}
+
+/**
+* Radio and checkbox inputs
+*/
+input[type="checkbox"],
+input[type="radio"] {
+  @include transition;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  vertical-align: middle;
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: 0;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  &:focus, &:active {
+    border-color: transparent;
+    padding: 0;
+  }
+}
+// TODO: Do not put pseudo elements on input fields, use labels
+input[type="radio"] {
+  border-radius: 100%;
+}
+input[type="checkbox"]:after {
+  @include transition;
+  @include icon-radio_unchecked;
+  font-size: 15px;
+  font-weight: normal;
+  top: -1px;
+}
+input[type="checkbox"]:checked {
+  background-color: transparent;
+}
+input[type="checkbox"]:checked:after {
+  @include icon-check;
+}
+input[type="radio"]:after {
+  @include transition;
+  @include icon-radio_unchecked;
+  font-size: 15px;
+  top: -1px;
+}
+input[type="radio"]:hover:after,
+input[type="radio"]:checked:after {
+  @include icon-radio_checked;
+  //font-size: 15px;
+}
+/**
+* Toggle Switch
+*/
+.toggle {
+  input[type="checkbox"] {
+    background-color: $text-light;
+    border-radius: 2em;
+    padding: 2px;
+    transition: all 0.4s ease;
+    display: inline-block;
+    width: 3em;
+    height: 1.5em;
+    position: relative;
+    border: none;
+    outline: none;
+    margin: 0;
+    &:hover, &:focus {
+      padding: 2px;
+      background-color: $text-light;
+    }
+    &:after {
+      content: '';
+      border-radius: 50%;
+      background: $light-primary;
+      transition: all 0.2s ease;
+      left: 0;
+      position: relative;
+      display: block;
+      width: 50%;
+      height: 100%;
+      top: 0;
+    }
+    &:checked, &:hover:checked, &:focus:checked {
+      background-color: $color-primary;
+    }
+    &:checked:after {
+      left: 50%;
+    }
+  }
+  span {
+    margin-left: 1em;
+  }
+}
+/**
+* Photo upload
+*/
+.upload-photo {
+  @include transition;
+  border: 2px dashed rgba($dark-primary,0.3);
+  padding: 20px;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  line-height: 22px;
+  color: $text-medium;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    border: 2px dashed $color-primary;
+    background-color: rgba($light-secondary,0.5);
+  }
+  input {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute
+  }
+}
+
+/**
+* Form Loading
+*/
+@include keyframes('searchresultspinner');
+.form-loading-indicator:after {
+  @include transition;
+  content: '';
+  position: absolute;
+  z-index: 9999;
+  width: 20px;
+  height: 20px;
+  right: 20px;
+  top: 57px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #F0F0F0;
+  border-top-color: #F58220;
+  animation: searchresultspinner 1s linear infinite;
+  pointer-events: none;
+  @media (min-width: $mobile-l) {
+    right: 50px;
+  }
+}
+
+/**
+* Password inputs
+*/
+.password-strength-container {
+  position: absolute;
+  right: 50px;
+  bottom: -4px;
+  span {
+    position: absolute;
+    display: inline-block;
+    right: 90px;
+    font-size: 13px;
+    color: $color-error;
+    top: 2px;
+    &.strength-low {
+      color: $color-error;
+    }
+    &.strengh-medium {
+      color: $color-warning;
+    }
+    &.strength-high {
+      color: $color-success;
+    }
+  }
+}
+.password-strength {
+  display: block;
+  position: relative;
+  margin: 5px auto 20px;
+  width: 80px;
+  content: "";
+  height: 8px;
+  top: 0;
+  background-color: rgba($text-light, 0.3);
+  border-radius: 2px;
+  &:after {
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 0;
+    height: 12px;
+    background-color: $color-error;
+    content: "";
+    box-shadow: 0 0 1px 0 rgba($dark-primary, 0.2);
+  }
+  &.strength-low:after {
+    background-color: $color-error;
+    width: 25%;
+  }
+  &.strength-medium:after {
+    background-color: $color-warning;
+    width: 50%;
+  }
+  &.strength-high:after {
+    background-color: $color-success;
+    width: 95%;
+  }
+}
+.password-match-container {
+  position: absolute;
+  right: 50px;
+  bottom: 13px;
+  span {
+    width: auto;
+    display: inline-block;
+    color: $text-medium;
+    position: relative;
+    font-size: 13px;
+    top: 1px;
+    right: 7px;
+    &.pw-match {
+      color: $color-success;
+    }
+  }
+  i {
+    top: 1px;
+    font-size: 16px;
+    color: $text-light;
+  }
+}
+.password-hints {
+  text-align: left;
+  display: block;
+  margin: 22px auto 0;
+  p {
+    padding: 5px 10px 5px 15px;
+    border-left: 2px solid #d9d9d9;
+    color: $color-primary;
+    font-weight: 600;
+    line-height: 18px;
+    font-size: 13px;
+    i {
+      color: $color-primary !important;
+    }
+    span {
+      color: $text-medium;
+      font-weight: normal;
+      display: block;
+      font-size: 13px;
+      &:first-of-type {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.form-inline .form-field {
+  @media (min-width: $mobile-l) {
+    display: inline-block;
+    width: auto;
+    vertical-align: top;
+  }
+  @media (max-width: $mobile-l) {
+    margin-bottom: 5px;
+  }
+}
+// match the height of text and button fields
+.form-inline input:not(.btn) {
+  padding: {
+    top: 8px;
+    bottom: 8px;
+  }
+}
+
+@media (max-width: $mobile-l) {
+  .password-match-container {
+    right: 20px;
+  }
+  .password-strength {
+    width: 50px;
+  }
+  .password-strength-container {
+    right: 20px;
+    & span {
+      right: 60px;
+    }
+  }
+}
+/**
+* large radio button
+*/
+.radio-button {
+  label {
+    position: relative;
+    display: block;
+    margin-top: 12px;
+    transition: all 0.25s ease;
+    font-weight: 600;
+    font-size: 12px;
+    align-items: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 5px 14px 5px 20px;
+    width: 100%;
+  }
+  input[type="radio"],
+  input[type="radio"] + span:before,
+  input[type="radio"] + span:after {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include transition(border);
+    @include transition(background-color);
+    @include transition(transform);
+  }
+  input[type="radio"] + span {
+    padding-left: 22px;
+  }
+  input[type="radio"] + span:before,
+  input[type="radio"] + span:after {
+    content: '';
+    display: block;
+    border-radius: 50%;
+  }
+  input:checked + span:before {
+    transform: scale(0.5);
+  }
+  input[type="radio"] {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    z-index: 10;
+    &:after {
+      transition: all 0.25s ease;
+      content: "";
+      font-family: inherit;
+      font-weight: normal;
+      font-size: inherit;
+      top: inherit;
+    }
+    &:hover:after,
+    &:checked:after {
+      content: "";
+      font-family: inherit;
+      font-weight: normal;
+    }
+  }
+}

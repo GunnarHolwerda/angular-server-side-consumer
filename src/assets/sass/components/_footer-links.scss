@@ -1,0 +1,118 @@
+
+ul.footer-links {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+  margin: 30px 30px 0 auto;
+  max-width: 120px;
+  min-width: 100px;
+  &.align-right {
+    margin-right: 0;
+    float: right;
+    text-align: right;
+    width: 160px;
+  }
+  &.last-of-type {
+    margin-right: 0 !important;
+  }
+  li {
+    vertical-align: middle;
+    width: auto;
+    margin: 0;
+    display: block;
+    color: $text-dark;
+
+    img {
+      @include transition;
+      width: auto;
+      margin-bottom: 0;
+      height: 24px;
+    }
+    a {
+      @include transition;
+      padding: 4px 0;
+      font-size: 13px;
+      line-height:18px;
+      display: inline-block;
+      width: auto;
+    }
+    &:first-child {
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 10px 0;
+      font-size: 13px;
+      color: $text-dark;
+    }
+    &.address {
+      line-height: 16px;
+      color: $text-light;
+    }
+    &.logo {
+      padding: 10px 0 8px;
+      a {
+        padding: 0;
+        img {
+          -webkit-backface-visibility: hidden;
+        }
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    &.not-first-child {
+      text-transform: inherit;
+      font-weight: normal;
+      padding: 0;
+      font-size: 12px;
+      color: $text-medium;
+    }
+    a:hover {
+      color: $color-primary;
+    }
+    a:active {
+      transform: translateY(2px);
+    }
+  }
+}
+// footer sizing modifiers
+@media (max-width:$desktop-s) {
+  ul.footer-links {
+    margin-right: 30px;
+    max-width: 100px;
+    min-width: 80px;
+  }
+}
+// footer sizing modifiers
+@media (max-width:$mobile-l) {
+  ul.footer-links {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin: 15px auto 0;
+
+    &.align-right {
+      float: none;
+      margin-right: 0;
+      padding-right: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+    li {
+      text-align: center;
+      width: 100%;
+      max-width: 100%;
+
+      &:first-child {
+        padding: 6px 0;
+      }
+    }
+    li img {
+      margin: 25px auto;
+      height: 30px;
+    }
+    &:last-of-type {
+      margin-right: auto !important;
+    }
+  }
+}

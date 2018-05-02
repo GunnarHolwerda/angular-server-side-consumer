@@ -1,0 +1,41 @@
+.ui-dropdown {
+  box-shadow: 0 1px 1px rgba($dark-primary, 0.1);
+  background-color: lighten($light-secondary, 3%);
+  color: $color-primary;
+  &.ui-state-default {
+    border: 1px solid rgba($dark-primary, 0.1);
+  }
+}
+
+.ui-dropdown .ui-dropdown-label {
+  color: $color-primary;
+}
+
+.ui-dropdown .ui-dropdown-trigger {
+  &.ui-state-default {
+    border-color: transparent;
+  }
+  color: $color-primary;
+}
+
+.ui-dropdown:not(.ui-state-disabled):hover {
+  background-color: lighten($light-secondary, 5%);
+}
+
+.ui-dropdown .ui-dropdown-panel .ui-dropdown-item {
+  &.ui-state-highlight span:before {
+    color: $color-primary;
+  }
+}
+
+.modal-dropdown {
+  &.ui-dropdown .ui-dropdown-trigger {
+    color: $color-primary;
+  }
+}
+
+.table-dropdown {
+  &.ui-dropdown .ui-dropdown-trigger {
+    color: $color-primary;
+  }
+}

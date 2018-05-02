@@ -1,0 +1,230 @@
+/**
+* Base table styles
+*/
+.ui-table-wrapper {
+  -webkit-overflow-scrolling: touch;
+}
+
+// table basics
+.ui-table table {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border-spacing: 0;
+  table-layout: auto;
+  width: 100%;
+}
+/**
+* Table Header
+*/
+.ui-table-thead {
+  border-left: 3px solid transparent;
+  text-align: left;
+}
+
+.ui-table .ui-table-thead > tr > th {
+  position: relative;
+  @include transition;
+  padding: 0 20px;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  height: 50px;
+  white-space: nowrap;
+  &.text-right {
+    padding-right: 4px;
+  }
+  &.ui-selection-column {
+    font-size: 13px;
+  }
+  &.ui-sortable-column .ui-column-title {
+    text-decoration: underline;
+  }
+  &.ui-sortable-column {
+    .ui-sortable-column-icon {
+      opacity: 0;
+    }
+    &:hover .ui-sortable-column-icon {
+      opacity: 0.5;
+    }
+  }
+  &.ui-state-highlight .ui-sortable-column-icon {
+    opacity: 1.0;
+  }
+}
+
+.ui-sortable-column-icon {
+  font-size: 16px;
+  margin-left: 5px;
+  line-height: 0;
+}
+
+/**
+* Table Body rows and columns
+*/
+.ui-table .ui-table-tbody > tr {
+  @include transition;
+  position: relative;
+  border-left: 3px solid transparent;
+
+  // Group titles
+  &.table-divider {
+    th,
+    > td {
+      position: relative;
+      &.small-padding {
+        padding: 4px 0px;
+      }
+      .checkbox-wrapper {
+        margin-left: 23px;
+        top: -2px;
+      }
+      i {
+        opacity: 1.0;
+      }
+    }
+    &.divider-edit-on {
+      .divider-edit {
+        display: none;
+      }
+      .divider-save {
+        display: inline-block;
+        margin-left: 20px;
+      }
+      label {
+        opacity: 0.0;
+        visibility: hidden;
+      }
+      span {
+        cursor: text;
+        border-radius: 1px;
+        z-index: 9999;
+      }
+    }
+  }
+  &.group {
+    td {
+      border: none;
+    }
+  }
+
+  &:hover {
+    td {
+      opacity: 1.0;
+      //color: $text-dark;
+      .btn {
+        box-shadow: 0 1px 2px 0 rgba(44, 44, 44, 0.2);
+      }
+    }
+  }
+
+  &.active {
+    td {
+      opacity: 1.0;
+      font-weight: 600;
+    }
+  }
+}
+
+.ui-table .ui-table-tbody > tr > td {
+  padding: 13px 20px;
+  font-size: 13px;
+  line-height: 16px;
+  text-shadow: none;
+  @include transition;
+  &:last-child {
+    border-right: 0;
+  }
+}
+
+/**
+* Table Row Hovering:
+* don't currently want the hover effects, but the table puts the hoverable class on it
+* although we cannot select the entire row but have to use the checkbox...
+*/
+.ui-table.ui-table-hoverable-rows .ui-table-tbody > tr:not(.ui-state-highlight):hover {
+  cursor: default;
+}
+
+/**
+* Table Row Groups
+*/
+.ui-rowgroup-header td {
+  padding-left: 60px;
+  text-align: left;
+}
+
+.divider-edit {
+  display: inline-block;
+}
+
+.divider-save {
+  display: none;
+  margin-left: 20px;
+}
+
+.divider-edit-on {
+  .divider-edit {
+    display: none;
+  }
+  .divider-save {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  label {
+    opacity: 0.0;
+    visibility: hidden;
+  }
+}
+
+label.table-checkbox {
+  padding: 0;
+}
+
+/* Checkbox in table */
+.ui-table .ui-chkbox.ui-widget {
+  position: relative;
+  font-size: 1.25em;
+}
+
+.ui-table-tbody td.text-right {
+  padding-right: 28px;
+}
+
+/* Responsive */
+.ui-table-responsive .ui-table-tbody > tr > td .ui-column-title {
+  display: none;
+}
+
+@media screen and (max-width: $mobile-ngprime) {
+  .ui-table-responsive .ui-table-thead > tr > th,
+  .ui-table-responsive .ui-table-tfoot > tr > td {
+    display: none !important;
+  }
+
+  .ui-table-responsive .ui-table-tbody > tr > td {
+    text-align: left;
+    display: flex;
+    border: 0 none;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .ui-table-responsive .ui-table-tbody > tr > td {
+    .ui-column-title {
+      padding: .4em;
+      min-width: 40%;
+      display: inline-block;
+      margin: -.4em 1em -.4em -.4em;
+      font-weight: bold;
+    }
+    &.draggable {
+      display: none;
+    }
+    div {
+      display: inline-block;
+    }
+  }
+}

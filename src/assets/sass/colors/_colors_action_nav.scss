@@ -1,0 +1,37 @@
+.action-nav {
+  li {
+    a {
+      background-color: darken($light-primary, 5%);
+      color: $text-dark;
+      .dropdown-icon {
+        color: $text-medium;
+      }
+      &:hover, &:hover .dropdown-icon {
+        color: $color-primary;
+        .secondary-nav-icon {
+          color: $text-dark;
+        }
+      }
+    }
+  }
+  li:not(:last-child) {
+    border-right: 1px solid rgba($light-primary, 0.1)
+  }
+  li.save-button a {
+    background-color: rgba(#1f8c00, 0.9)
+  }
+}
+// secondary nav dropdown for actions`
+ul ul {
+  border-top: 2px solid $dark-primary;
+  box-shadow: 0 2px 5px rgba($dark-primary, 0.4);
+  background-color: darken($light-primary, 5%);
+  li {
+    a {
+      background-color: transparent;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.trainoregon {
+  /**
+   * Dark colors
+   */
+  $dark-secondary: #003764;
+  $dark-tertiary: #002B51;
+
+  /**
+   * Brand Colors
+   */
+  $color-primary: $dark-secondary;
+  $dark-primary: $dark-tertiary;
+  $color-secondary: #00a990;
+  $color-tertiary: #964806; // rgba(150,72,5,1)
+  $active-nav-color: #f28132; // rgba(242,129,50,1)
+
+  @import '../colors/index';
+}

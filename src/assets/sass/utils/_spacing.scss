@@ -1,0 +1,41 @@
+
+//$spacer: 1em;
+//$spacers: (
+//  0: 0,
+//  1: ($spacer * .25),
+//  2: ($spacer * .5),
+//  3: $spacer,
+//  4: ($spacer * 1.5),
+//  5: ($spacer * 3)
+//);
+//
+
+//xs - 5px
+//s - 20
+//m - 40
+//l - 60
+//xl - 80
+//xxl - 100
+
+$spacer: 1px;
+//$spacers: (
+//  0: 0,
+//  1: ($spacer * 5),
+//  2: ($spacer * 20),
+//  3: ($spacer * 40),
+//  4: ($spacer * 60),
+//  5: ($spacer * 80),
+//) ;
+$spacers: (
+  0: 0,
+  5: ($spacer * 5),
+  10: ($spacer * 10),
+  15: ($spacer * 15),
+  20: ($spacer * 20),
+  30: ($spacer * 30),
+  40: ($spacer * 40),
+  60: ($spacer * 60),
+  80: ($spacer * 80),
+);
+
+@import "../../../../node_modules/bootstrap/scss/utilities/spacing";

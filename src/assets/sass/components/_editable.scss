@@ -1,0 +1,33 @@
+.editable {
+  @include transition;
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 0.5em 0.5em 0;
+  border: 1px solid transparent;
+
+  &[contenteditable="true"] {
+    border-color: $color-primary;
+    padding-left: 0.5em;
+  }
+}
+.editable-save:after {
+  @include icon-edit;
+  cursor: pointer;
+  margin-left: 0.35em;
+  padding: 5px;
+  color: $text-light;
+}
+.editable[contenteditable="true"] + .editable-save:after {
+  @include icon-success;
+  color: $color-success;
+}
+.editable-cancel:after {
+  @include icon-clear;
+  padding: 5px;
+  visibility: hidden;
+}
+.editable[contenteditable="true"] ~ .editable-cancel:after {
+  cursor: pointer;
+  color: $color-error;
+  visibility: visible;
+}

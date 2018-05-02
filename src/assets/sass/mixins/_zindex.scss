@@ -1,0 +1,10 @@
+/* Use calculations when something needs to be below an item listed here
+ * Example: z-index: ($z-modal - 5);
+ * These are meant to be prominent containers with layering issues
+ */
+
+$z-modal: 999999;
+$z-overlay: 555555;
+$z-header: 99999;
+$z-typeahead-overlay: 88888;
+$z-secondary-header: 77777;

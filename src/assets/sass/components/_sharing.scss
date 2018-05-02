@@ -1,0 +1,156 @@
+// sharing styling
+.social-share-links {
+	@include transition;
+	display: inline-block;
+	float: right;
+	width: auto;
+	height: auto;
+	text-align: right;
+	background-color: transparent;
+	border: 1px solid transparent;
+	box-shadow: none;
+	z-index: 999;
+	top: 18px;
+	position: relative;
+	right: 0;
+
+	&:last-child {
+		margin-right: 0;
+	}
+	&.exposed {
+		height: auto;
+		text-align: left;
+
+		li {
+			display: inline-block;
+		}
+	}
+	li {
+		@include transition;
+		text-align: center;
+		display: inline-block;
+		width: auto !important;
+		margin-right: 10px;
+		vertical-align: middle;
+		max-width: none;
+		min-width: 0 !important;
+
+		a {
+			display: inline-block;
+			margin: 0 auto;
+			border-radius: 50%;
+			padding: 12px 3px 2px;
+			background-color: rgba(76, 75, 75, 1.0);
+			color: $light-primary;
+			box-shadow: 0 1px 2px 0 rgba($dark-primary, 0.3);
+			font-size: 12px;
+			font-weight: 600;
+			height: 34px;
+			width: 34px;
+
+			&.reddit {
+				background-color: #ff4500;
+			}
+			&.facebook {
+				background-color: #3b5998;
+			}
+			&.twitter {
+				background-color: #1da1f2;
+			}
+			&.linkedin {
+				background-color: #0077b5;
+			}
+			img {
+				height: 55%;
+				max-height: 12px;
+				width: auto;
+			}
+		}
+		a:hover {
+			transform: scale(1.05);
+			background-color: $color-primary;
+		}
+		&:active {
+			transform: scale(1.1) !important;
+		}
+	}
+}
+.social-share-links.full {
+	float: none;
+	width: 100%;
+	text-align: center;
+	margin-top: 0;
+	padding-top: 30px;
+	border-top: 1px solid rgba($dark-primary, 0.1);
+
+	li:last-child {
+		margin-right: 0;
+	}
+}
+@media (max-width:$mobile-l) {
+	.social-share-links {
+		float: none;
+		display: block;
+		top: 0;
+		padding: 0 0 10px 15px;
+		z-index: 1;
+		position: relative;
+		text-align: left;
+	}
+	.social-share-links.full {
+		display: block;
+		text-align: center !important;
+		width: 100%;
+		padding: 0;
+		padding-top: 30px;
+		margin: 50px auto 0;
+
+		li {
+			margin: 0 auto;
+			margin-right: 0;
+		}
+	}
+}
+// social share links
+.social-share-links.social-share-footer {
+  float: right;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  top: -2px;
+
+  &:after {
+    display: none;
+  }
+  li {
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 30px;
+    }
+    a {
+      height: 26px;
+      width: 26px;
+      padding: 4px 2px 1px;
+    }
+    img {
+      height: 60%;
+      max-height: 10px;
+    }
+  }
+}
+@media (max-width:$mobile-xl) {
+  .social-share-links.social-share-footer {
+    display: block !important;
+    margin: 20px auto 0;
+    text-align: center;
+    width: 100%;
+    float: none !important;
+    top: initial;
+
+    li:last-child {
+      margin-right: 0;
+    }
+  }
+}

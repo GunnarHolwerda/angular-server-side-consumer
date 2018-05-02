@@ -1,0 +1,34 @@
+/**
+ * Flexbox default
+ */
+@mixin flex-display {
+  display: flex;
+  flex-direction: row;
+}
+
+/**
+ * Inline block vertical alignment
+ */
+@mixin inline-vertical-top {
+  display: inline-block;
+  vertical-align: top;
+}
+@mixin inline-vertical-middle {
+  display: inline-block;
+  vertical-align: middle;
+}
+@mixin inline-vertical-bottom {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/**
+ * General Spacing vars
+ */
+$spacing-block: 20px;
+
+/**
+ * Header heights
+ */
+$header-height-lg: 96px;
+$header-height-mobile: 77px;

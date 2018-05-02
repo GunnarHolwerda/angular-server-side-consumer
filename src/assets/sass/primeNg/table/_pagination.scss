@@ -1,0 +1,44 @@
+// table pager styling
+//ui-paginator-bottom
+.ui-paginator {
+  @include transition;
+  position: relative;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.ui-paginator-element {
+  @include transition;
+  cursor: pointer;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 0 auto;
+  width: auto;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  position: relative;
+  border: 1px solid transparent;
+  &:active {
+    transform: translateY(1px);
+  }
+  i:before {
+    font-style: normal;
+  }
+  &.ui-state-disabled {
+    cursor: default;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  @media (max-width:$mobile-m) {
+    padding: 8px;
+  }
+}
+.fa-backward:before  {
+  @include icon-arrowleft;
+}
+.fa-forward:before {
+  @include icon-arrowright;
+}

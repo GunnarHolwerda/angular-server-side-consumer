@@ -1,0 +1,8 @@
+.ui-chkbox .ui-chkbox-box {
+  &.ui-state-default:not(.ui-state-active) {
+    background-color: $light-primary;
+  }
+}
+.ui-chkbox-box:not(.ui-state-disabled):not(.ui-state-active):hover {
+  background-color: $light-primary;
+}

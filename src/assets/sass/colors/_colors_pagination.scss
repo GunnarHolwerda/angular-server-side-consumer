@@ -1,0 +1,24 @@
+// table pager styling
+.ui-paginator {
+  background-color: $light-primary;
+  color: $color-primary;
+}
+
+.ui-paginator-element {
+  color: $text-medium;
+  &:hover {
+    border-color: rgba($dark-primary, 0.1);
+    color: $text-dark;
+    box-shadow: 0 1px 1px 0 rgba($dark-primary, 0.1);
+    background-color: rgba($dark-primary, 0.05);
+  }
+  &.ui-state-active {
+    background-color: rgba($color-primary, 0.8);
+    border-color: $color-primary;
+    color: $light-primary;
+    box-shadow: 0 1px 2px 0 rgba($dark-primary, 0.2);
+    &:hover {
+      background-color: rgba($color-primary, 0.9);
+    }
+  }
+}

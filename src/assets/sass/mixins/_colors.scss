@@ -1,0 +1,51 @@
+/**
+ * Brand Colors
+ */
+$color-primary: #f28132 !default; // rgba(242,129,50,1)
+$color-secondary: #f9b04e !default; // rgba(251,176,64,1)
+$color-tertiary: #964806 !default; // rgba(150,72,5,1)
+$color-os-brand: #f28132 !default; // rgba(242,129,50,1)
+
+/**
+ * Dark colors
+ */
+$dark-primary: #242323 !default; // rgba(36,35,35,1)
+$dark-secondary: #4c4b4b !default; // rgba(76,75,75,1)
+$dark-tertiary: #383737 !default; // rgba(56,55,55,1)
+
+/**
+ * Light Colors
+ */
+$light-primary: #FFFFFF !default; // rgba(255,255,255,1)
+$light-secondary: #F0F0F0 !default; // rgba(240,240,240,1)
+$light-tertiary: #F5F5F5 !default; // rgba(245,245,245,1)
+
+/**
+ * Text Colors
+ */
+$text-lighter: #c9c9c9 !default; // rgba(201,201,201,1)
+$text-light: #999999 !default; // rgba(153,153,153,1)
+$text-medium: #777777 !default; // rgba(119,119,119,1)
+$text-dark: #555555 !default; // rgba(85,85,85,1)
+$text-default: #444444 !default; // rgba(68,68,68,1)
+
+/**
+ * Status Colors
+ */
+$color-success: #50A54D !default; // rgba(80,165,77,1)
+$color-warning: #E1B946 !default; // rgba(225,185,70,1)
+$color-alert: #C34747 !default; // rgba(195,71,71,1)
+$color-error: $color-alert;
+$color-info: #448fd7 !default; // rgba(68,143,215,1)
+
+/**
+ * Notifications
+ */
+$os-status-color-error: $color-alert !default;
+$os-status-color-error-text-color: $light-primary !default;
+$os-status-color-warning: $color-warning !default;
+$os-status-color-warning-text-color: $light-primary !default;
+$os-status-color-success: $color-success !default;
+$os-status-color-success-text-color: $light-primary !default;
+
+$active-nav-color: $color-primary !default;

@@ -1,0 +1,17 @@
+/**
+* Mobile Only
+*/
+@media (min-width: $mobile-l) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+/**
+* Hide for mobile
+*/
+@media (max-width: $mobile-l) {
+  .hide-mobile {
+    display: none;
+  }
+}

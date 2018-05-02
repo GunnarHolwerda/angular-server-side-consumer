@@ -1,0 +1,11 @@
+.siemensglobal {
+  /**
+   * Brand Colors
+   */
+  $color-primary: #f28132;
+  $color-secondary: lighten($color-primary, 10%);
+  $color-tertiary: darken($color-primary, 10%);
+  $active-nav-color: $color-primary;
+
+  @import '../colors/index';
+}

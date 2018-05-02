@@ -1,0 +1,131 @@
+.btn {
+  box-shadow: 0 1px 1px 0 rgba($dark-primary, 0.2);
+  text-shadow: 0 0 1px rgba($dark-primary, 0.1);
+  color: $light-primary;
+  &:hover {
+    box-shadow: 0 2px 1px 0 rgba($dark-primary, 0.2);
+  }
+  &:active {
+    box-shadow: 0 2px 1px 0 rgba($dark-primary, 0.5);
+  }
+  &.btn-primary, &.btn-default {
+    background-color: rgba($color-primary, 0.85);
+    border-color: $color-primary;
+    color: $light-primary;
+
+    &:hover {
+      background-color: rgba($color-primary, 0.9);
+      color: $light-primary;
+    }
+  }
+  &.btn-secondary {
+    background-color: rgba($light-primary, 0.95);
+    border-color: rgba($dark-primary, 0.08) !important;
+    color: $text-medium;
+
+    &:hover {
+      background-color: $light-primary;
+      color: $text-dark;
+    }
+  }
+  &.btn-tertiary {
+    background-color: rgba($dark-secondary, 0.8);
+    border-color: rgba($dark-secondary, 0.95) !important;
+    color: rgba($light-primary, 0.95);
+
+    &:hover {
+      background-color: rgba($dark-tertiary, 0.8);
+      color: $light-primary;
+    }
+  }
+  &.btn-disabled, &:disabled {
+    &:hover {
+      box-shadow: 0 2px 1px 0 rgba($dark-primary, 0.1);
+    }
+  }
+  &.btn-ghost {
+    background-color: transparent;
+    border-color: rgba($dark-tertiary, 0.7) !important;
+    color:$text-medium;
+    &:hover {
+      border-color: rgba($dark-tertiary, 1.0) !important;
+      color: $text-dark;
+    }
+  }
+  &.btn-ghost-light {
+    background-color: transparent;
+    border-color: rgba($light-secondary, 0.9) !important;
+    color: $light-secondary;
+    &:hover {
+      border-color: rgba($light-primary, 1.0) !important;
+      color: $light-primary;
+    }
+  }
+  &.text-medium {
+    color: $text-medium;
+  }
+}
+// specific overrides to use our loading indicator on a button
+// can not be applied to input, must be on button to submit
+@include keyframes('searchresultspinner');
+.btn.form-loading-indicator {
+  &:after {
+    background-color: transparent;
+    border-color: $light-secondary !important;
+    border-top-color: $color-primary !important;
+  }
+}
+
+// table buttons
+.btn-status {
+  color: $text-medium;
+  background-color: $light-primary;
+  border-color: rgba($dark-primary, 0.05) !important;
+  box-shadow: 0 1px 1px 0 rgba($dark-primary, 0.05);
+  &:hover {
+    background-color: $light-primary;
+    border-color: rgba($dark-primary, 0.1) !important;
+    color: $text-medium;
+  }
+  &.status-success {
+    background-color: $color-success;
+    color: $light-primary;
+    & i, & .material-icons {
+      color: $light-primary;
+    }
+  }
+  &.status-warning {
+    background-color: $color-warning;
+    color: $light-primary;
+    i, .material-icons {
+      color: $light-primary;
+    }
+  }
+  &.status-error, &.status-alert {
+    background-color: $color-alert;
+    color: $light-primary;
+    i, .material-icons {
+      color: $light-primary;
+    }
+  }
+  &.btn-default {
+    color: $text-medium;
+    background-color: $light-primary;
+    border-color: rgba($dark-primary, 0.05) !important;
+    box-shadow: 0 1px 1px 0 rgba($dark-primary, 0.05);
+    text-shadow: 0 0 2px rgba($dark-primary, 0.1);
+    &:hover {
+      background-color: $light-primary;
+      border-color: rgba($dark-primary, 0.1) !important;
+      box-shadow: 0 2px 1px 0 rgba($dark-primary, 0.2);
+      color: $text-medium;
+    }
+    i, .material-icons {
+      background-color: $light-primary;
+      color: $text-medium;
+    }
+  }
+}
+.btn-inline {
+  text-shadow: 0 0 3px rgba($dark-primary, 0.3);
+}

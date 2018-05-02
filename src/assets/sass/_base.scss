@@ -1,0 +1,79 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  font-size: 100%;
+  position: relative;
+  overflow: auto;
+}
+iframe {
+  border: none;
+  width: 100%;
+}
+body {
+  background: $light-secondary;
+  background-color: $light-secondary;
+  color: $text-default;
+  letter-spacing: 0.1px;
+  text-shadow: 0 1px 1px rgba(30, 30, 30, 0.1);
+  font-family: $font-body;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+}
+/**
+ * Responsive Media
+ */
+img, object, embed {
+  max-width: 100%;
+  height: auto;
+}
+// TODO: make this a component?
+.video-wrapper {
+  @include transition;
+  width: 580px;
+  max-width: 90%;
+  margin: 60px auto 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 15px 3px rgba($dark-primary,0.3);
+  &:hover {
+    box-shadow: 0 0 20px 5px rgba($dark-primary,0.3);
+  }
+}
+/**
+ * Don't allow users to select images
+ */
+img {
+  -ms-interpolation-mode: bicubic;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/**
+ * Remove list styles from unordered lists
+ */
+ul {
+  list-style-type: none;
+}
+/**
+ * Create hidden labels for screen readers
+ */
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.hidden {
+  display: none !important;
+}

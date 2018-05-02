@@ -1,0 +1,67 @@
+input:not(.btn), input[type="radio"]:not(.radio-input), textarea {
+  border: 1px solid rgba($dark-primary, 0.1);
+  background-color: rgba($light-secondary, 0.3);
+  color: $color-primary;
+  &:active,
+  &:focus {
+    color: $color-primary;
+    border-color: $color-primary;
+    background-color: rgba($light-primary, 0.8);
+  }
+}
+
+.input-field-container {
+  border: 1px solid rgba($dark-primary, 0.1);
+  background-color: rgba($light-secondary, 0.3);
+  color: $color-primary;
+}
+
+input[type="checkbox"]:after, .ui-chkbox-icon:after {
+  color: $text-light;
+}
+
+input[type="checkbox"]:hover:after,
+.ui-chkbox-icon:hover:after {
+  color: $color-primary;
+}
+input[type="checkbox"]:checked {
+  background-color: transparent;
+}
+input[type="checkbox"]:checked:after,
+.ui-state-active .ui-chkbox-icon:after {
+  color: $color-primary;
+}
+input[type="radio"]:after {
+  color: $text-light;
+}
+input[type="radio"]:hover:after,
+input[type="radio"]:checked:after {
+  color: $color-primary;
+}
+
+/**
+* large radio button
+*/
+.radio-button {
+  label {
+    color: $text-medium;
+  }
+  input[type="radio"] + span:before,
+  input[type="radio"] + span:after {
+    background-color: transparent;
+    border: 2px solid rgba($text-medium, 0.3);
+  }
+  label:hover span:before,
+  input:focus + span:before {
+    background-color: $color-primary;
+    border: 2px solid $color-primary;
+  }
+  input:checked + span:before {
+    background-color: $color-primary;
+    border: 2px solid $color-primary;
+  }
+  input:checked + span:after {
+    border-color: $color-primary;
+  }
+}
+

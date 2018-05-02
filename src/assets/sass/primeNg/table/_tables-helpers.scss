@@ -1,0 +1,235 @@
+// table note
+.datatable-header-row.table-note {
+  font-weight: 600;
+  text-transform: none;
+  font-style: italic;
+}
+// checkbox specific for table
+.checkbox-cell {
+  text-align: center;
+  padding: 0;
+  width: 60px;
+  max-width: 60px;
+  min-width: 60px;
+}
+//the styles for the checkbox are in the _forms partial,
+//do not use the actual checkbox styles
+.ui-chkbox .ui-helper-hidden-accessible input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  &:after {
+    content: none;
+    display: none;
+  }
+}
+.ngx-datatable .checkbox-wrapper {
+  position: relative;
+
+  input:after {
+    top: -2px;
+    left: -2px;
+    position: relative;
+    font-size: 17px !important;
+  }
+}
+
+// edit and save buttons
+.divider-edit {
+  @include transition;
+  cursor: pointer;
+  @include inline-vertical-middle;
+  font-size: 16px !important;
+  top: -2px;
+  margin-left: 0 !important;
+}
+.divider-save {
+  @include transition;
+  cursor: pointer;
+  display: none;
+  font-weight: bold !important;
+  font-size: 18px !important;
+  position: relative;
+  margin-right: 5px !important;
+}
+
+
+// constrain width of images in cells - mostly for ratings star example
+.datatable-body-cell.with-image {
+  min-width: 120px;
+  img {
+    display: inline-block;
+    margin-right: 5px;
+    max-height: 11px;
+    width: auto;
+  }
+  span {
+    font-style: italic;
+  }
+}
+.datatable-body-cell.drag-handle, .datatable-header-cell.drag-handle {
+  text-align: center;
+}
+.datatable-body-cell.drag-handle {
+  cursor: move !important;
+  i {
+    left: -8px;
+    cursor: move;
+    font-size: 15px;
+    width: 1px;
+    margin: 0 auto;
+  }
+}
+.datatable-header-cell.drag-handle {
+  padding-left: 8px;
+  padding-right: 8px;
+  i {
+    top: -1px;
+    opacity: 1.0;
+    margin-left: 0 !important;
+    text-decoration: none;
+  }
+}
+
+// button table button
+.datatable-body-cell.with-button {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  white-space: nowrap;
+  width: 20px;
+  text-align: center;
+
+  &.with-button-no-text {
+    a {
+      padding: 3px 14px;
+    }
+    i {
+      margin-right: 0;
+      font-size: 14px;
+      line-height: 4px;
+    }
+  }
+}
+// constrain width on th items for columns w buttons
+.datatable-header-cell.with-button {
+  white-space: nowrap;
+}
+
+// empty set text and spacing adjustments
+.datatable-body-row.empty-set {
+  .datatable-body-cell {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  p {
+    width: 500px;
+    max-width: 90%;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    margin: 0 auto 30px;
+  }
+}
+
+// drag and drop demo helper classes
+.ui-sortable-helper {
+  display: table !important;
+  width: auto !important;
+  height: auto !important;
+}
+// link indicator
+i.link-indicator {
+  @include transition;
+  font-size: 11px;
+  margin-left: 5px;
+  position: relative;
+}
+.empty-row {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 18px;
+}
+
+//icons
+.datatable-icon-left:before {
+  @include icon-arrowleft;
+}
+.datatable-icon-right:before {
+  @include icon-arrowright;
+}
+.datatable-icon-down:before {
+  @include icon-arrowdown;
+}
+.datatable-icon-up:before {
+  @include icon-arrowup;
+}
+.datatable-icon-prev:before {
+  @include icon-first-page;
+}
+.datatable-icon-skip:before {
+  @include icon-last-page;
+}
+.dragHeader {
+  &:before {
+    @include icon-view-day;
+    font-size: 15px;
+  }
+}
+.draggable {
+  cursor: move;
+}
+.handle {
+  &:after, &:before {
+    font-size: 15px;
+    position: relative;
+    white-space: nowrap;
+  }
+  &:after {
+    @include icon-more-vert;
+    margin-left: -10px;
+  }
+  &:before {
+    @include icon-more-vert;
+  }
+}
+.group-name {
+  font-size: 13px;
+  text-transform: uppercase;
+  &.read-only {
+    padding: 0.5em;
+    display: inline-block;
+  }
+  &.default-group {
+    padding: 0.75em 0.75em 0.5em 0;
+    display: inline-block;
+  }
+}
+.demo-count {
+  font-size: 44px;
+  display: block;
+  //margin: -9px auto 50px;
+}
+.not-editable {
+  transition: all 0.25s ease;
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 0.5em 0.5em 0;
+  border: 1px solid transparent;
+}
+.table-link {
+  font-weight: 600;
+  cursor: pointer;
+}
+.title-column {
+  min-width: 300px;
+}
+.group-name .editable-icon {
+  font-size: 1em;
+}
+.table-search-wrapper {
+  @include inline-vertical-middle;
+  width: auto;
+  position: relative;
+}

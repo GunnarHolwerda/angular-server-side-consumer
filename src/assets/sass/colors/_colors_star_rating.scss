@@ -1,0 +1,17 @@
+//
+//OpenSesame Theme reviews list styles
+//--------------------------------------------------
+.star-rating {
+  // .star-rating--primary
+  &--primary {
+    color: $color-primary;
+  }
+  // .star-rating--background
+  &--background {
+    color: rgba($color-primary, 0.3);
+  }
+  // .star-rating--count
+  &--count {
+    color: rgba($color-primary, 0.3);
+  }
+}

@@ -1,0 +1,338 @@
+/**
+* Material icon codes; see https://github.com/google/material-design-icons/blob/master/iconfont/codepoints
+* Use mixins below to include these in pseudo elements
+*/
+// reference characters - we these instead of friendly names for browsers < ie9
+$icon-search: "\E8B6"; //&#xe8b6;
+$icon-lists: "\E05F"; // lists - &#xe05f;
+$icon-reports: "\E1B8"; // reports - &#xe1b8;
+$icon-licenses: "\E8B0"; // licenses - &#xe8b0;
+$icon-groups: "\E886"; // groups - &#xe886;
+$icon-faceteam: "\e87c"; // face team user - &#xe87c;
+$icon-logout: "\e8ac"; // log out - &#xe8ac;
+$icon-billingcc: "\E870"; // billing credit card - &#xE870;
+$icon-support: "\E887"; // suport - &#xE887;
+$icon-settings: "\E8B8"; // settings - &#xE8B8;
+$icon-flagtour: "\E153"; // flag tour - &#xE153;
+$icon-demos: "\E425"; // demos - &#xE425;
+$icon-selling: "\E227"; // selling - &#xE227;
+$icon-browse: "\E8F0"; // browse subjects - &#xE8F0;
+$icon-lists: "\E02F"; // lists - &#xE02F;
+$icon-cart: "\E8CC"; //&#xE8CC;
+$icon-add: "\E147"; // add new &#xE147;
+$icon-copy: "\E14D"; // copy duplicate - &#xE14D;
+$icon-success: "\E876"; // success - &#xE876;
+$icon-lang: "\E894"; // language - &#xE894;
+$icon-gradcap: "\E80C"; // grad cap course purchaed learner - &#xE80C;
+$icon-browse: "\E87A"; // browse - &#xE87A;
+$icon-locked: "\E897"; // locked - &#xE897;
+$icon-back: "\E5C4"; // back - &#xE5C4;
+$icon-filter: "\E152"; // filter advanced search - &#xE152;
+$icon-edit: "\E254"; // edit - &#xE254;
+$icon-send: "\E163"; // send - &#xE163;
+$icon-delete: "\E92B"; // delete - &#xE92B;
+$icon-login: "\E0DA"; // log in - &#xE0DA;
+$icon-password: "\E32A"; // password - &#xE32A;
+$icon-gridview: "\E3EC"; // grid view - &#xE3EC;
+$icon-listview: "\E241"; // list view - &#xE241;
+$icon-arrowup: "\E316";
+$icon-arrowdown: "\E313";
+$icon-arrowleft: "\E314";
+$icon-arrowright: "\E315";
+$icon-check: "\E86C"; //check with circle
+$icon-check-2: "\E5CA";
+$icon-quote: "\E244";
+$icon-radio_unchecked: "\E836";
+$icon-radio_checked: "\E837";
+$icon-envelope: "\E0BE";
+$icon-first-page: "\e5dc";
+$icon-last-page: "\e5dd";
+$icon-new-folder: "\E2CC";
+$icon-view-day: "\E8ED";
+$icon-more-vert: "\E5D4"; // 1/2 of the drag handle
+$icon-clear: "\E14C";
+$icon-cert: "\E866";
+$icon-open-new: "\E89E";
+$icon-block: "\E14B";
+$icon-thumbs-up: "\E8DC";
+$icon-thumbs-down: "\E8DB";
+$icon-thumbs: "\E8DD";
+
+/*
+* Use these mixins to include icons in before/after pseudo elements
+*/
+@mixin icon-search() {
+  content: "#{$icon-search}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-lists() {
+  content: "#{$icon-lists}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-reports() {
+  content: "#{$icon-reports}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-licenses() {
+  content: "#{$icon-licenses}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-groups() {
+  content: "#{$icon-groups}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-faceteam() {
+  content: "#{$icon-faceteam}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-logout() {
+  content: "#{$icon-logout}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-billingcc() {
+  content: "#{$icon-billingcc}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-support() {
+  content: "#{$icon-support}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-settings() {
+  content: "#{$icon-settings}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-flagtour() {
+  content: "#{$icon-flagtour}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-demos() {
+  content: "#{$icon-demos}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-selling() {
+  content: "#{$icon-selling}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-browse() {
+  content: "#{$icon-browse}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-lists() {
+  content: "#{$icon-lists}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-cart() {
+  content: "#{$icon-cart}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-add() {
+  content: "#{$icon-add}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-copy() {
+  content: "#{$icon-copy}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-success() {
+  content: "#{$icon-success}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-lang() {
+  content: "#{$icon-lang}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-gradcap() {
+  content: "#{$icon-gradcap}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-browse() {
+  content: "#{$icon-browse}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-locked() {
+  content: "#{$icon-locked}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-back() {
+  content: "#{$icon-back}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-filter() {
+  content: "#{$icon-filter}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-edit() {
+  content: "#{$icon-edit}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-send() {
+  content: "#{$icon-send}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-delete() {
+  content: "#{$icon-delete}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-login() {
+  content: "#{$icon-login}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-password() {
+  content: "#{$icon-password}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-gridview() {
+  content: "#{$icon-gridview}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-listview() {
+  content: "#{$icon-listview}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-arrowup() {
+  content: "#{$icon-arrowup}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-arrowdown() {
+  content: "#{$icon-arrowdown}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-check() {
+  content: "#{$icon-check}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-check-2() {
+  content: "#{$icon-check-2}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-arrowleft() {
+  content: "#{$icon-arrowleft}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-radio_checked() {
+  content: "#{$icon-radio_checked}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-radio_unchecked() {
+  content: "#{$icon-radio_unchecked}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-arrowright() {
+  content: "#{$icon-arrowright}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-quote() {
+  content: "#{$icon-quote}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-envelope() {
+  content: "#{$icon-envelope}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-first-page() {
+  content: "#{$icon-first-page}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-last-page() {
+  content: "#{$icon-last-page}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-new-folder() {
+  content: "#{$icon-new-folder}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-view-day() {
+  content: "#{$icon-view-day}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-more-vert() {
+  content: "#{$icon-more-vert}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-clear() {
+  content: "#{$icon-clear}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-cert() {
+  content: "#{$icon-cert}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-open-new() {
+  content: "#{$icon-open-new}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-block() {
+  content: "#{$icon-block}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-thumbs-up() {
+  content: "#{$icon-thumbs-up}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-thumbs-down() {
+  content: "#{$icon-thumbs-down}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-thumbs() {
+  content: "#{$icon-thumbs}";
+  font-family: $font-icon;
+  font-weight: normal;
+}
+@mixin icon-group() {
+  content: "group";
+  font-family: $font-icon;
+  font-weight: normal;
+}

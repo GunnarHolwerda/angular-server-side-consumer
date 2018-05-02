@@ -1,0 +1,225 @@
+@import "../assets/sass/mixins/index";
+
+.cards {
+  width: 60%;
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  div {
+    padding: 10px 0;
+  }
+}
+
+.resource-item {
+  @include transition;
+  display: block;
+  position: relative;
+  width: 260px;
+  height: 300px;
+  text-align: left;
+  padding: 0;
+  border-radius: 1px;
+  background-color: $light-primary;
+  z-index: 3;
+  box-shadow: 0 1px 2px rgba($dark-primary, 0.3);
+  &.large {
+    width: 340px;
+    height: 380px;
+    background-size: auto 20px;
+    span.resource-item-type {
+      font-size: 12px;
+    }
+    .resource-item-divider {
+      background-color: rgba($color-primary, 1.0);
+      width: 70px;
+    }
+    span.resource-item-title {
+      font-size: 17px;
+      line-height: 22px;
+    }
+    .resource-image {
+      height: 160px;
+      box-shadow: 0 1px 1px rgba($dark-primary, 0.2), inset 0 -10px 80px 0 rgba($color-secondary, 0.2);
+    }
+    &.with-hover .resource-item-divider {
+      background-color: rgba($dark-primary, 0.2);
+    }
+    &.with-hover .resource-image {
+      box-shadow: 0 1px 1px rgba($dark-primary, 0.2), inset 0 -10px 50px 0 rgba($color-secondary, 0.5);
+    }
+  }
+}
+
+.resource-item-stack {
+  @include transition;
+  display: block;
+  position: absolute;
+  width: 260px;
+  height: 300px;
+  text-align: left;
+  padding: 30px;
+  border-radius: 1px;
+  background-color: $light-primary;
+  z-index: 2;
+  &:before {
+    @include transition;
+    width: 250px;
+    height: 300px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: block;
+    box-shadow: 0 1px 2px rgba($dark-primary, 0.1);
+    background-color: rgba($light-primary, 0.2);
+    content: "";
+    z-index: 1;
+    border-radius: 1px;
+  }
+  &.large {
+    width: 340px;
+    height: 380px;
+    &:before {
+      width: 330px;
+      height: 380px;
+      top: 5px;
+      left: 5px;
+      box-shadow: 0 1px 2px rgba($dark-primary, 0.2);
+      background-color: rgba($color-primary, 1.0);
+    }
+    &.with-hover:before {
+      box-shadow: 0 1px 2px rgba($dark-primary, 0.1);
+      background-color: rgba($light-primary, 0.2);
+    }
+  }
+}
+
+@media (max-width:$mobile-m) {
+  .resource-item.large {
+    width: 280px;
+    height: 320px;
+    span.resource-item-title {
+      font-size: 15px;
+    }
+    .resource-image {
+      height: 120px;
+    }
+  }
+  .resource-item-stack.large {
+    width: 280px;
+    height: 320px;
+    &:before {
+      width: 270px;
+      height: 320px;
+    }
+  }
+}
+
+.resource-image {
+  display: block;
+  border-radius: 1px 1px 0 0;
+  width: 100%;
+  height: 120px;
+  box-shadow: 0 1px 1px rgba($dark-primary, 0.2), inset 0 -10px 50px 0 rgba($dark-primary, 0.5);
+  background-size: cover;
+  background-position: center 25%;
+  @include transition;
+}
+
+.resource-item:hover .resource-image {
+  box-shadow: 0 1px 2px rgba($dark-primary, 0.2), inset 0 -10px 80px 0 rgba($dark-primary, 0.2);
+}
+
+.card-sub-text {
+  font-size: $font-small;
+  color: $text-medium;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 20px 25px 0;
+  @include transition;
+}
+
+.resource-item-type {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  border-top: 1px solid rgba($dark-primary, 0.05);
+  text-transform: uppercase;
+  color: $color-primary;
+  background-color: $light-primary;
+  font-size: 11px;
+  font-weight: 700;
+  margin: 0 auto;
+  padding: 15px 25px 16px;
+  &.small-pad {
+    padding: 10px 25px;
+    font-size: 11px;
+  }
+  & span {
+    margin-left: 10px;
+    color: $text-medium;
+  }
+}
+
+span.resource-item-title {
+  display: block;
+  padding: 15px 25px 15px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+li {
+  padding: 20px;
+  display: inline-block;
+  vertical-align: top;
+  width: auto !important;
+  min-width: 0px !important;
+  >a {
+    display: block;
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 1px 3px 0 rgba($dark-primary, 0.3);
+      .resource-item-stack {
+        &:before {
+          background-color: rgba($color-primary, 1.0);
+          box-shadow: 0 1px 2px rgba($dark-primary, 0.2);
+        }
+      }
+    }
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 3px 0 rgba($dark-primary, 0.4);
+    }
+  }
+  &.no-hover {
+    & a {
+      cursor: default;
+      &:hover {
+        transform: translateY(0);
+        box-shadow: 0 1px 2px rgba($dark-primary, 0.05);
+        .resource-item-stack {
+          &:before {
+            top: 5px;
+            background-color: rgba($light-primary, 0.3);
+          }
+          &.large:before {
+            background-color: rgba($color-primary, 1.0);
+          }
+        }
+      }
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 1px 2px rgba($dark-primary, 0.1);
+      }
+    }
+  }
+}

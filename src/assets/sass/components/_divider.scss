@@ -1,0 +1,35 @@
+.item-divider {
+  @include transition;
+  margin: 0 0 0 25px;
+  width: 60px;
+  height: 6px;
+  position: relative;
+  display: block;
+  background-color: rgba($dark-primary, 0.2);
+}
+.item-divider.full-page {
+  margin: 30px auto 0;
+  width: 120px;
+  height: 8px;
+  max-width: 50%;
+  background-color: rgba($light-primary, 0.3);
+
+  &.dark {
+    background-color: rgba($dark-primary, 0.3);
+  }
+}
+.item-divider.detail-page-divider {
+  background-color: rgba(40,40,40,0.2);
+  margin: 40px auto 30px;
+  width: 120px;
+  height: 8px;
+  max-width: 50%;
+}
+.item-divider.landing-page {
+  margin: 20px 0;
+  width: 120px;
+  height: 8px;
+  max-width: 50%;
+  background-color: rgba($dark-primary, 0.1);
+
+}

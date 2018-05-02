@@ -1,0 +1,87 @@
+
+$color-map: (
+  "color-primary": $color-primary,
+  "color-secondary": $color-secondary,
+  "color-tertiary": $color-tertiary,
+  "dark-primary": $dark-primary,
+  "dark-secondary": $dark-secondary,
+  "dark-tertiary": $dark-tertiary,
+  "light-primary": $light-primary,
+  "light-secondary": $light-secondary,
+  "light-tertiary": $light-tertiary,
+  "lighter": $text-lighter,
+  "light": $text-light,
+  "medium": $text-medium,
+  "dark": $text-dark,
+  "default": $text-default,
+  "color-success": $color-success,
+  "color-warning": $color-warning,
+  "color-alert": $color-alert,
+  "color-error": $color-error,
+  "color-info": $color-info,
+  "color-os-brand": $color-os-brand
+);
+
+@each $class, $color in $color-map {
+  /**
+ * Color Helpers
+ */
+  .#{$class}, .text-#{$class} {
+    color: $color;
+  }
+
+  /**
+ * Background Color Helpers
+ */
+  .bg-#{$class} {
+    background-color: $color;
+  }
+
+  .bg-#{$class}-t-3 {
+    background-color: rgba($color, .3);
+  }
+
+  .bg-#{$class}-t-8 {
+    background-color: rgba($color, .8);
+  }
+
+  /**
+ * Border- Color Helpers
+ */
+  .br-#{$class} {
+    border-color: $color;
+  }
+
+  .br-#{$class}-t-1 {
+    border-color: rgba($color, .1);
+  }
+}
+.bg-transparent {
+  background-color: transparent;
+}
+.text-light-primary-trans {
+  color: transparentize($light-primary, 0.2);
+}
+.text-color-primary--hover:hover {
+  color: $color-primary;
+}
+.filled {
+  width: 100%;
+  background-color: $light-primary;
+  box-shadow: 0 1px 2px rgba(44, 44, 44, 0.1);
+  &.transparent {
+    background-color: transparent;
+  }
+}
+.loading-indicator {
+  &:after {
+    border-color: $light-secondary;
+    border-top-color: $color-primary;
+  }
+}
+.progress-ring-circle {
+  stroke: $color-primary;
+}
+.progress-ring-bg {
+  stroke: $light-secondary;
+}
